@@ -1,0 +1,10 @@
+{
+    "scripts": {
+    "start": "node server/server.js",
+    "build": "cd client && npm install && npm run build"
+  }, 
+  "engines": {
+    "node": "v14.17.6"
+  }
+
+}
