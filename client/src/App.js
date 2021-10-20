@@ -8,12 +8,15 @@ import { useState, useEffect, Component, Fragment} from 'react';
 import AddPost from './components/AddPost';
 import ListPosts from './components/ListPosts';
 
+const baseURL = "https://my-fullstack-demo.herokuapp.com/";
+
 function App() {
 
   const [data, setData] = useState(null);
 
   React.useEffect(() => {
-    fetch("http://localhost:3001/api/hello")
+    const url = baseURL + "api/hello";
+    fetch(url)
       .then((res) => res.json())
       .then((data) => setData(data.message));
   }, []);
