@@ -31,8 +31,8 @@ function App() {
       </div>
 
       <div className="text-center mt-5">
-        <img src={logo} className="App-logo" alt="logo"/>
-        <img src={logo12} alt="logo"/>
+        <img src={logo} className="App-logo center" alt="logo"/>
+        {/* <img src={logo12} className="" alt="logo"/> */}
         <footer>Built with React, Node, Express. By Toan Phan</footer>
       </div>
     </Fragment>
