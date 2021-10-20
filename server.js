@@ -14,21 +14,19 @@ app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-
 // route using DB 
 app.get('/db', async (req, res) => {
   try {
     const client = await pool.connect();
     const result = await client.query('SELECT * FROM post');
     const results = { 'results': (result) ? result.rows : null};
-    res.render('pages/db', results );
+    res.send(JSON.stringify(results));
     client.release();
   } catch (err) {
     console.error(err);
     res.send("Error " + err);
   }
 })
-
 
 app.get("/api/hello", (req, res) => {
   res.json({message: "Hello from Express server :) "});
