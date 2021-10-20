@@ -9,8 +9,10 @@
   },
   "dependencies": {
     "body-parser": "^1.18.3",
+    "cors": "^2.8.5",
     "express": "^4.16.4",
-    "mysql": "^2.18.1"
+    "mysql": "^2.18.1",
+    "pg": "^8.7.1"
   },
   "devDependencies": {
     "concurrently": "^4.0.1"
