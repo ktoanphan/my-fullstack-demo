@@ -2,7 +2,7 @@
 
 const express = require("express");
 const bodyParser = require('body-parser');
-
+const path = require('path');
 
 const PORT = process.env.PORT || 3001;
 
@@ -22,6 +22,16 @@ app.post('/api/world', (req, res) => {
     `I received your POST request. This is what you sent me: ${req.body.post}`,
   );
 });  
+
+if (process.env.NODE_ENV === 'production') {
+  // Serve any static files
+  app.use(express.static(path.join(__dirname, 'client/build')));
+    
+  // Handle React routing, return all requests to React app
+  app.get('*', function(req, res) {
+    res.sendFile(path.join(__dirname, 'client/build', 'index.html'));
+  });
+}
 
 app.listen(PORT, () => {
   console.log(`Server listening on ${PORT}`);
