@@ -1,5 +1,6 @@
 import React, { Fragment, useState } from 'react';
 
+const baseURL = "https://my-fullstack-demo.herokuapp.com/posts";
 
 const AddPost = () => {
     const [description, setDescription] = useState("");
@@ -8,7 +9,7 @@ const AddPost = () => {
         e.preventDefault();
         try {
             const body = {description}; 
-            const response = await fetch("http://localhost:3001/posts", {
+            const response = await fetch(baseURL, {
                 method: "POST", 
                 headers: {"Content-Type": "application/json"},
                 body: JSON.stringify(body)

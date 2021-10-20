@@ -2,6 +2,8 @@ import React, { Fragment, useEffect, useState } from 'react';
 
 import EditPost from "./EditPost";
 
+const baseURL = "https://my-fullstack-demo.herokuapp.com/posts";
+
 
 const ListPosts = () => {
 
@@ -9,9 +11,8 @@ const ListPosts = () => {
 
     const getPosts = async () => {
         try {
-            const response = await fetch("http://localhost:3001/posts"); 
+            const response = await fetch(baseURL); 
             const jsonData = await response.json();
-
             setPosts(jsonData);
         } catch(err) {
             console.log(err.message);
@@ -28,7 +29,7 @@ const ListPosts = () => {
     // deletePost 
     const deletePost = async (id) => {
         try {
-            const deletePost = await fetch(`http://localhost:3001/posts/${id}`, {
+            const deletePost = await fetch(`${baseURL}/${id}`, {
                 method: "DELETE"
             });
 

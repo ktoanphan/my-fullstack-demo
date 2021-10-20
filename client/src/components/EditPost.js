@@ -1,5 +1,7 @@
 import React, { Fragment, useState} from 'react';
 
+const baseURL = "https://my-fullstack-demo.herokuapp.com/posts";
+
 const EditPost = ({post}) => {
     // console.log(post);
     const [description, setDescription] = useState(post.description);
@@ -10,7 +12,7 @@ const EditPost = ({post}) => {
         e.preventDefault();
         try {
             const body = { description} ;
-            const response = await fetch(`http://localhost:3001/posts/${post.post_id}`, {
+            const response = await fetch(`${baseURL}/${post.post_id}`, {
                 method: "PUT", 
                 headers: {"Content-Type": "application/json"}, 
                 body: JSON.stringify(body)
