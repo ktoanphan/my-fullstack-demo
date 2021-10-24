@@ -33,7 +33,7 @@ function App() {
       <div className="text-center mt-5">
         <img src={logo} className="App-logo center" alt="logo"/>
         {/* <img src={logo12} className="" alt="logo"/> */}
-        <footer>Built with React, Node, Express. By Toan Phan</footer>
+        <footer>Built with React, Node, Express. A demo by Toan Phan</footer>
       </div>
     </Fragment>
   );
