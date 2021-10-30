@@ -29,7 +29,7 @@ app.get('/db', async (req, res) => {
 })
 
 app.get("/api/hello", (req, res) => {
-  res.json({message: "Hello from Express server :) "});
+  res.json({message: "Hello from server"});
 })
 
 
